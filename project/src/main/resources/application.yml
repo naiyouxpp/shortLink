@@ -1,0 +1,34 @@
+server:
+  port: 8001
+
+spring:
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .html
+  data:
+    redis:
+      host: 47.113.178.187
+      port: 6379
+      password: 123
+      database: 0
+      connect-timeout: 1800000
+      lettuce:
+        pool:
+          max-active: 20
+          max-idle: 5
+          min-idle: 0
+          max-wait: -1
+  datasource:
+    # ShardingSphere 对 Driver 自定义，实现分库分表等隐藏逻辑
+    driver-class-name: org.apache.shardingsphere.driver.ShardingSphereDriver
+    # ShardingSphere 配置文件路径
+    url: jdbc:shardingsphere:classpath:shardingsphere-config.yaml
+
+    #    据说hikari是比德鲁伊的更好用
+    hikari:
+      connection-test-query: select 1
+      connection-timeout: 20000
+      idle-timeout: 300000
+      maximum-pool-size: 5
+      minimum-idle: 5
