@@ -128,7 +128,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
             lambdaQueryWrapper.eq(ShortLinkDO::getEnableStatus, 0);
             lambdaQueryWrapper.eq(ShortLinkDO::getDelFlag, 0);
             lambdaQueryWrapper.eq(ShortLinkDO::getGid, each);
-            Integer count = shortLinkMapper.selectCount(lambdaQueryWrapper).intValue();;
+            Integer count = shortLinkMapper.selectCount(lambdaQueryWrapper).intValue();
             shortLinkGroupCountRespDTO.setGid(each);
             shortLinkGroupCountRespDTO.setShortLinkCount(count);
             return shortLinkGroupCountRespDTO;
@@ -209,7 +209,7 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
     @Override
     public void restoreUrl(String shortUri, ServletRequest request, ServletResponse response) {
 
-        String fullShortLink  = "http://localhost" +"/"+ shortUri;
+        String fullShortLink  = "http://localhost/"+ shortUri;
         String originUrl = stringRedisTemplate.opsForValue().get(String.format(GOTO_SHORT_LINK_KEY, fullShortLink));
 
         if (StrUtil.isNotBlank(originUrl)){
@@ -252,24 +252,20 @@ public class ShortLinkServiceImpl extends ServiceImpl<ShortLinkMapper, ShortLink
             lambdaQueryWrapper.eq(ShortLinkDO::getEnableStatus,0);
             ShortLinkDO shortLinkDO = shortLinkMapper.selectOne(lambdaQueryWrapper);
 
-            if (shortLinkDO!=null) {
-                if (shortLinkDO.getValidDate()!=null&&shortLinkDO.getValidDate().before(new Date())){
-                    stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, fullShortLink),"-",30, TimeUnit.MINUTES);
-                    ((HttpServletResponse)response).sendRedirect("/page/notfound");
-                    return;
-                }
-                stringRedisTemplate.opsForValue().set(
-                        String.format(GOTO_SHORT_LINK_KEY,fullShortLink),
-                        shortLinkDO.getOriginUrl(),
-                        LinkUtil.getLinkCacheValidTime(shortLinkDO.getValidDate()),TimeUnit.MICROSECONDS
-                );
-                ((HttpServletResponse)response).sendRedirect(shortLinkDO.getOriginUrl());
+            if (shortLinkDO!=null&&shortLinkDO.getValidDate().before(new Date())) {
+                stringRedisTemplate.opsForValue().set(String.format(GOTO_IS_NULL_SHORT_LINK_KEY, fullShortLink),"-",30, TimeUnit.MINUTES);
+                ((HttpServletResponse)response).sendRedirect("/page/notfound");
+                return;
             }
+            stringRedisTemplate.opsForValue().set(
+                    String.format(GOTO_SHORT_LINK_KEY,fullShortLink),
+                    shortLinkDO.getOriginUrl(),
+                    LinkUtil.getLinkCacheValidTime(shortLinkDO.getValidDate()),TimeUnit.MICROSECONDS
+            );
+            ((HttpServletResponse)response).sendRedirect(shortLinkDO.getOriginUrl());
         }finally {
             lock.unlock();
         }
-
-
     }
 
     public String createSuffix(ShortLinkCreateReqDTO requestParam) {

@@ -2,6 +2,7 @@ package admin.controller;
 
 import admin.common.convention.result.Result;
 import admin.remote.dto.ShortLinkRemoteService;
+import admin.remote.dto.req.RecycleBinSaveReqDTO;
 import admin.remote.dto.req.ShortLinkCreateReqDTO;
 import admin.remote.dto.req.ShortLinkPageReqDTO;
 import admin.remote.dto.req.ShortLinkUpdateReqDTO;
@@ -45,6 +46,13 @@ public class ShortLinkController {
     public Result<String> getTitleByUrl(@RequestParam("url") String url){
         return shortLinkRemoteService.getTitleByUrl(url) ;
     }
-
+    @PostMapping("/save")
+    public Result<Void> saveRecycleBin(@RequestBody RecycleBinSaveReqDTO requestParam){
+        return shortLinkRemoteService.saveRecycleBin(requestParam) ;
+    }
+    @PostMapping("/recycleBinGetPage")
+    public Result<IPage<ShortLinkPageRespDTO>> recycleBinPage(@RequestBody ShortLinkPageReqDTO requestParam){
+        return shortLinkRemoteService.recycleBinPage(requestParam);
+    }
 
 }

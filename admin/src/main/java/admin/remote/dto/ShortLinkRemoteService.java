@@ -2,6 +2,7 @@ package admin.remote.dto;
 
 import admin.common.convention.result.Result;
 import admin.common.convention.result.Results;
+import admin.remote.dto.req.RecycleBinSaveReqDTO;
 import admin.remote.dto.req.ShortLinkCreateReqDTO;
 import admin.remote.dto.req.ShortLinkPageReqDTO;
 import admin.remote.dto.req.ShortLinkUpdateReqDTO;
@@ -12,6 +13,8 @@ import cn.hutool.http.HttpUtil;
 import com.alibaba.fastjson2.JSON;
 import com.alibaba.fastjson2.TypeReference;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 
 import java.util.HashMap;
 import java.util.List;
@@ -43,5 +46,12 @@ public interface ShortLinkRemoteService {
         String resultStr = HttpUtil.post("http://localhost:8001/shortLink/title", map);
         return JSON.parseObject(resultStr, new TypeReference<>(){});
     }
-
+    default Result<Void> saveRecycleBin(RecycleBinSaveReqDTO requestParam){
+        HttpUtil.post("http://localhost:8001/shortLink/save", JSON.toJSONString(requestParam));
+        return Results.success();
+    }
+    default Result<IPage<ShortLinkPageRespDTO>> recycleBinPage(ShortLinkPageReqDTO requestParam){
+        String resultStr = HttpUtil.post("http://localhost:8001/shortLink/recycleBinGetPage", JSON.toJSONString(requestParam));
+        return JSON.parseObject(resultStr, new TypeReference<>(){});
+    }
 }
