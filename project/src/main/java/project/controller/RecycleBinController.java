@@ -8,8 +8,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import project.common.convention.result.Result;
 import project.common.convention.result.Results;
+import project.dto.req.RecycleBinDeleteReqDTO;
+import project.dto.req.RecycleBinRecoverReqDTO;
 import project.dto.req.RecycleBinSaveReqDTO;
-import project.dto.req.ShortLinkPageReqDTO;
+import project.dto.req.ShortLinkRecycleBinPageReqDTO;
 import project.dto.resp.ShortLinkPageRespDTO;
 import project.service.RecycleBinService;
 
@@ -25,7 +27,16 @@ public class RecycleBinController {
         return Results.success(recycleBinService.save(requestParam));
     }
     @PostMapping("/recycleBinGetPage")
-    public Result<IPage<ShortLinkPageRespDTO>> Page(@RequestBody ShortLinkPageReqDTO requestParam){
+    public Result<IPage<ShortLinkPageRespDTO>> Page(@RequestBody ShortLinkRecycleBinPageReqDTO requestParam){
         return Results.success(recycleBinService.pageShortLink(requestParam));
     }
+    @PostMapping("/recoverRecycleBin")
+    public Result<Void> recoverRecycleBin(@RequestBody RecycleBinRecoverReqDTO requestParam){
+        return Results.success(recycleBinService.recoverRecycleBin(requestParam));
+    }
+    @PostMapping("/deleteRecycleBin")
+    public  Result<Void> deleteRecycleBin(@RequestBody RecycleBinDeleteReqDTO requestParam){
+        return Results.success(recycleBinService.deleteRecycleBin(requestParam));
+    }
+
 }

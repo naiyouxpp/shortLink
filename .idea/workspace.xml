@@ -4,109 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="346046bd-85e1-4a67-944d-4e72a52093de" name="变更" comment="短链接开发1到4章初始化，其中获取图标功能、更新功能(gid)、新增短链接功能(返回的完整短链接有问题)、admin中remote中台连接调用的update有问题">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/ShortLinkAdminApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/biz/user/UserContext.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/biz/user/UserInfoDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/biz/user/UserTransmitFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/constant/RedisCacheConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/errorcode/BaseErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/errorcode/IErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/exception/AbstractException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/exception/ClientException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/exception/RemoteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/exception/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/result/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/convention/result/Results.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/database/BaseDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/enums/UserErrorCodeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/common/web/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/config/MyBatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/config/MyMetaObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/config/RBloomFilterConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/config/UserConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/config/UserFlowRiskControlConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/config/UserFlowRiskControlFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/controller/GroupController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/controller/ShortLinkController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/controller/UserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dao/entity/GroupDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dao/entity/UserDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dao/mapper/GroupMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dao/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/req/GroupChangeNameReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/req/GroupSortOrderUpdateReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/req/ShortLinkGroupSaveReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/req/UserLoginReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/req/UserRegisterReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/req/UserUpdateReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/resp/ShortLinkGroupListRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/resp/UserLoginRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dto/resp/UserRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/ShortLinkRemoteService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/ShortLinkCreateReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/ShortLinkPageReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/ShortLinkUpdateReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/resp/ShortLinkCreateRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/resp/ShortLinkGroupCountRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/resp/ShortLinkPageRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/serialize/PhoneDesensitizationSerializer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/GroupService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/serviceImpl/GroupServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/resources/shardingsphere-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/test/java/shortlink_admin_test.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gateway/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/ShortLinkApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/config/MyMetaObjectHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/constant/RedisKeyConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/constant/ShortLinkConstant.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/errorcode/BaseErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/errorcode/IErrorCode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/exception/AbstractException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/exception/ClientException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/exception/RemoteException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/exception/ServiceException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/result/Result.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/convention/result/Results.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/database/BaseDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/enums/VailDateTypeEnum.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/common/web/GlobalExceptionHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/config/MyBatisPlusConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/config/RBloomFilterConfiguration.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/controller/ShortLinkController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/controller/ShortLinkNotfoundController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/controller/UrlTitleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/ShortLinkDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/ShortLinkGotoDO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/ShortLinkGotoMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/ShortLinkMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkCreateReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkPageReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkUpdateReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkCreateRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkGroupCountRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkPageRespDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/ShortLinkServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/UrlTitleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/service/ShortLinkService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/service/UrlTitileService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/toolkit/HashUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/toolkit/LinkUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/resources/application.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/resources/shardingsphere-config.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/resources/templates/notfound.html" afterDir="false" />
+    <list default="true" id="346046bd-85e1-4a67-944d-4e72a52093de" name="变更" comment="实现将短链接放进回收站功能，并且能够分页查询回收站中的短链接">
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/RecycleBinDeleteReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/RecycleBinRecoverReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/ShortLinkRecycleBinPageReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/RecycleBinService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/serviceImpl/RecycleBinServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/RecycleBinDeleteReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/RecycleBinRecoverReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkRecycleBinPageReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/controller/ShortLinkController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/ShortLinkRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/ShortLinkRemoteService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/controller/RecycleBinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/controller/RecycleBinController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/RecycleBinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/RecycleBinServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/service/RecycleBinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/service/RecycleBinService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,11 +91,11 @@
       <recent name="E:\software\project\shortlink\project\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="admin.remote.dto.req" />
+      <recent name="project.dto.req" />
       <recent name="project.toolkit" />
       <recent name="project.common.constant" />
       <recent name="project.dao.mapper" />
-      <recent name="admin.remote.dto.req" />
-      <recent name="project.common.enums" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -192,7 +105,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShortLinkApplication">
+  <component name="RunManager" selected="Spring Boot.ShortLinkAdminApplication">
     <configuration name="shortlink_admin_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="shortlink_admin_test" />
       <module name="admin" />
@@ -233,8 +146,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ShortLinkApplication" />
         <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
+        <item itemvalue="Spring Boot.ShortLinkApplication" />
         <item itemvalue="应用程序.shortlink_admin_test" />
       </list>
     </recent_temporary>
@@ -301,8 +214,29 @@
       <workItem from="1716211823086" duration="661000" />
       <workItem from="1716277646178" duration="7000" />
       <workItem from="1716299774010" duration="162000" />
-      <workItem from="1716300256826" duration="3463000" />
+      <workItem from="1716300256826" duration="4114000" />
+      <workItem from="1716309349225" duration="1982000" />
+      <workItem from="1716365781590" duration="3557000" />
+      <workItem from="1716377961456" duration="10472000" />
+      <workItem from="1716400504308" duration="595000" />
+      <workItem from="1716470777280" duration="6957000" />
+      <workItem from="1716530825627" duration="1148000" />
     </task>
+    <task id="LOCAL-00001" summary="短链接开发1到4章初始化，其中获取图标功能、更新功能(gid)、新增短链接功能(返回的完整短链接有问题)、admin中remote中台连接调用的update有问题">
+      <created>1716304017218</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716304017218</updated>
+    </task>
+    <task id="LOCAL-00002" summary="实现将短链接放进回收站功能，并且能够分页查询回收站中的短链接">
+      <created>1716385059594</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716385059594</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -321,7 +255,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="短链接开发1到4章初始化，其中获取图标功能、更新功能(gid)、新增短链接功能(返回的完整短链接有问题)、admin中remote中台连接调用的update有问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="短链接开发1到4章初始化，其中获取图标功能、更新功能(gid)、新增短链接功能(返回的完整短链接有问题)、admin中remote中台连接调用的update有问题" />
+    <MESSAGE value="实现将短链接放进回收站功能，并且能够分页查询回收站中的短链接" />
+    <option name="LAST_COMMIT_MESSAGE" value="实现将短链接放进回收站功能，并且能够分页查询回收站中的短链接" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

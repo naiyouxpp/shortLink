@@ -2,14 +2,13 @@ package admin.controller;
 
 import admin.common.convention.result.Result;
 import admin.remote.dto.ShortLinkRemoteService;
-import admin.remote.dto.req.RecycleBinSaveReqDTO;
-import admin.remote.dto.req.ShortLinkCreateReqDTO;
-import admin.remote.dto.req.ShortLinkPageReqDTO;
-import admin.remote.dto.req.ShortLinkUpdateReqDTO;
+import admin.remote.dto.req.*;
 import admin.remote.dto.resp.ShortLinkCreateRespDTO;
 import admin.remote.dto.resp.ShortLinkGroupCountRespDTO;
 import admin.remote.dto.resp.ShortLinkPageRespDTO;
+import admin.service.RecycleBinService;
 import com.baomidou.mybatisplus.core.metadata.IPage;
+import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,11 +17,12 @@ import java.util.List;
 @Slf4j
 @RestController
 @RequestMapping("/admin/shortLink")
+@RequiredArgsConstructor
 public class ShortLinkController {
     ShortLinkRemoteService shortLinkRemoteService = new ShortLinkRemoteService() {
     };
 
-
+    private  final RecycleBinService recycleBinService;
     @PostMapping("/create")
     public Result<ShortLinkCreateRespDTO> createLink(@RequestBody ShortLinkCreateReqDTO requestParam){
         return shortLinkRemoteService.createLink(requestParam);
@@ -42,6 +42,7 @@ public class ShortLinkController {
     public Result<List<ShortLinkGroupCountRespDTO>> listGroupShortLinkCount(@RequestBody List<String> requestParam){
         return shortLinkRemoteService.listGroupShortLinkCount(requestParam);
     }
+    //获取原始链接title
     @GetMapping("/title")
     public Result<String> getTitleByUrl(@RequestParam("url") String url){
         return shortLinkRemoteService.getTitleByUrl(url) ;
@@ -51,8 +52,16 @@ public class ShortLinkController {
         return shortLinkRemoteService.saveRecycleBin(requestParam) ;
     }
     @PostMapping("/recycleBinGetPage")
-    public Result<IPage<ShortLinkPageRespDTO>> recycleBinPage(@RequestBody ShortLinkPageReqDTO requestParam){
-        return shortLinkRemoteService.recycleBinPage(requestParam);
+    public Result<IPage<ShortLinkPageRespDTO>> recycleBinPage(@RequestBody ShortLinkRecycleBinPageReqDTO requestParam){
+        return recycleBinService.recycleBinPage(requestParam);
+    }
+    @PostMapping("/recoverRecycleBin")
+    public Result<Void> recoverRecycleBin(@RequestBody RecycleBinRecoverReqDTO requestParam){
+        return shortLinkRemoteService.recoverRecycleBin(requestParam);
+    }
+    @PostMapping("/deleteRecycleBin")
+    public Result<Void> deleteRecycleBin(@RequestBody RecycleBinDeleteReqDTO requestParam){
+        return shortLinkRemoteService.deleteRecycleBin(requestParam);
     }
 
 }
