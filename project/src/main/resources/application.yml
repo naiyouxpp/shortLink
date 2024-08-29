@@ -8,6 +8,10 @@ mybatis-plus:
       logic-delete-value: 1
       logic-not-delete-value: 0
       id-type: auto
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  mapper-locations: classpath:mapper/*.xml
+
 
 spring:
   mvc:
@@ -16,7 +20,7 @@ spring:
       suffix: .html
   data:
     redis:
-      host: 47.113.178.187
+      host: 124.71.77.8
       port: 6379
       password: 123
       database: 0
@@ -40,3 +44,8 @@ spring:
       idle-timeout: 300000
       maximum-pool-size: 5
       minimum-idle: 5
+
+short-Link:
+  stats:
+    locale:
+      amap-key: 72c57fc61eadbefc86a0aec9e395ea70

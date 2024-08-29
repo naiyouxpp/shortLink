@@ -37,6 +37,7 @@ public class GroupController {
 
     @PutMapping("/updateGroup")
     public Result<String> changeGroupName(@RequestBody GroupChangeNameReqDTO requestParam){
+        //谁写的？我日
         LambdaQueryWrapper<GroupDO> lambdaQueryWrapper = new LambdaQueryWrapper<>();
         lambdaQueryWrapper.eq(GroupDO::getUsername, UserContext.getCurrentUser());
         lambdaQueryWrapper.eq(GroupDO::getGid,requestParam.getGid());

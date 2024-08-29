@@ -4,22 +4,58 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="346046bd-85e1-4a67-944d-4e72a52093de" name="变更" comment="实现将短链接放进回收站功能，并且能够分页查询回收站中的短链接">
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/RecycleBinDeleteReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/RecycleBinRecoverReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/ShortLinkRecycleBinPageReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/RecycleBinService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/serviceImpl/RecycleBinServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/RecycleBinDeleteReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/RecycleBinRecoverReqDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkRecycleBinPageReqDTO.java" afterDir="false" />
+    <list default="true" id="346046bd-85e1-4a67-944d-4e72a52093de" name="变更" comment="完成将短链接移至回收站、将短链接从回收站中恢复、将回收站中的短链接删除。">
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/controller/ShortLinkStatsController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkAccessLogsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkAccessStatsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkBrowserStatsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkDeviceStatsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkLocaleStatsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkNetworkStatsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkOsStatsDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/LinkStatsTodayDO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkAccessLogsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkAccessStatsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkBrowserStatsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkDeviceStatsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkLocaleStatsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkNetworkStatsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkOsStatsMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/LinkStatsTodayMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkGroupStatsAccessRecordReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkGroupStatsReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkStatsAccessRecordReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkStatsReqDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsAccessDailyRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsAccessRecordRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsBrowserRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsDeviceRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsLocaleCNRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsNetworkRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsOsRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsTopIpRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkStatsUvRespDTO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/ShortLinkStatsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/java/project/service/ShortLinkStatsService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/src/main/resources/mapper/LinkMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/controller/ShortLinkController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/controller/ShortLinkController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/ShortLinkRemoteService.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/ShortLinkRemoteService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/controller/RecycleBinController.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/controller/RecycleBinController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/RecycleBinServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/RecycleBinServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/service/RecycleBinService.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/service/RecycleBinService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/controller/GroupController.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/controller/GroupController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/dao/entity/UserDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/dao/entity/UserDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/ShortLinkPageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/req/ShortLinkPageReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/resp/ShortLinkPageRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/remote/dto/resp/ShortLinkPageRespDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/java/admin/service/serviceImpl/UserServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/java/admin/service/serviceImpl/UserServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/admin/src/test/java/shortlink_admin_test.java" beforeDir="false" afterPath="$PROJECT_DIR$/admin/src/test/java/shortlink_admin_test.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/ShortLinkDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/ShortLinkDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/ShortLinkGotoDO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/entity/ShortLinkGotoDO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/ShortLinkMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/dao/mapper/ShortLinkMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkPageReqDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/req/ShortLinkPageReqDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkPageRespDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/dto/resp/ShortLinkPageRespDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/ShortLinkServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/service/Impl/ShortLinkServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/java/project/toolkit/LinkUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/java/project/toolkit/LinkUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/src/main/resources/shardingsphere-config.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/project/src/main/resources/shardingsphere-config.yaml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -57,7 +93,7 @@
     &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;corretto-17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/software/project/shortlink/project/src/main/resources&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/software/project/shortlink/project/src/main/resources/mapper&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -66,7 +102,7 @@
     &quot;project.structure.last.edited&quot;: &quot;模块&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;configurable.group.editor&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;spring.configuration.checksum&quot;: &quot;3f4de58efa330fe68dae64d6c6f2a62e&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
@@ -81,21 +117,21 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\software\project\shortlink\project\src\main\resources\mapper" />
       <recent name="E:\software\project\shortlink\project\src\main\resources" />
       <recent name="E:\software\project\shortlink\admin\src\main\java\admin\remote\dto" />
       <recent name="E:\software\project\shortlink\project\src\main\java\project\common" />
       <recent name="E:\software\project\shortlink\project\src\main\java\project" />
-      <recent name="E:\software\project\shortlink\gateway\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\software\project\shortlink\project\src\main\resources" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
-      <recent name="admin.remote.dto.req" />
-      <recent name="project.dto.req" />
-      <recent name="project.toolkit" />
-      <recent name="project.common.constant" />
       <recent name="project.dao.mapper" />
+      <recent name="project.controller" />
+      <recent name="project.dto.resp" />
+      <recent name="project.dto.req" />
+      <recent name="project.service.Impl" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -105,7 +141,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="Spring Boot.ShortLinkAdminApplication">
+  <component name="RunManager" selected="Spring Boot.ShortLinkApplication">
     <configuration name="shortlink_admin_test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="shortlink_admin_test" />
       <module name="admin" />
@@ -146,8 +182,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="Spring Boot.ShortLinkApplication" />
+        <item itemvalue="Spring Boot.ShortLinkAdminApplication" />
         <item itemvalue="应用程序.shortlink_admin_test" />
       </list>
     </recent_temporary>
@@ -220,7 +256,29 @@
       <workItem from="1716377961456" duration="10472000" />
       <workItem from="1716400504308" duration="595000" />
       <workItem from="1716470777280" duration="6957000" />
-      <workItem from="1716530825627" duration="1148000" />
+      <workItem from="1716530825627" duration="19910000" />
+      <workItem from="1716603629206" duration="605000" />
+      <workItem from="1716689400856" duration="7537000" />
+      <workItem from="1716774724779" duration="5323000" />
+      <workItem from="1716798351711" duration="9304000" />
+      <workItem from="1716881736660" duration="7220000" />
+      <workItem from="1716960036533" duration="18722000" />
+      <workItem from="1717005122580" duration="1159000" />
+      <workItem from="1717051010664" duration="2755000" />
+      <workItem from="1717070818265" duration="2981000" />
+      <workItem from="1717387291117" duration="5653000" />
+      <workItem from="1720276172018" duration="88000" />
+      <workItem from="1720276332872" duration="608000" />
+      <workItem from="1720369546742" duration="357000" />
+      <workItem from="1720424834323" duration="6613000" />
+      <workItem from="1720507122689" duration="12000" />
+      <workItem from="1720507347785" duration="60000" />
+      <workItem from="1720884017582" duration="249000" />
+      <workItem from="1720885642222" duration="1106000" />
+      <workItem from="1720887359326" duration="938000" />
+      <workItem from="1720928969725" duration="429000" />
+      <workItem from="1720940092399" duration="10000" />
+      <workItem from="1722086248322" duration="10000" />
     </task>
     <task id="LOCAL-00001" summary="短链接开发1到4章初始化，其中获取图标功能、更新功能(gid)、新增短链接功能(返回的完整短链接有问题)、admin中remote中台连接调用的update有问题">
       <created>1716304017218</created>
@@ -236,7 +294,14 @@
       <option name="project" value="LOCAL" />
       <updated>1716385059594</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="完成将短链接移至回收站、将短链接从回收站中恢复、将回收站中的短链接删除。">
+      <created>1716535649445</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716535649445</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -256,7 +321,8 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="短链接开发1到4章初始化，其中获取图标功能、更新功能(gid)、新增短链接功能(返回的完整短链接有问题)、admin中remote中台连接调用的update有问题" />
     <MESSAGE value="实现将短链接放进回收站功能，并且能够分页查询回收站中的短链接" />
-    <option name="LAST_COMMIT_MESSAGE" value="实现将短链接放进回收站功能，并且能够分页查询回收站中的短链接" />
+    <MESSAGE value="完成将短链接移至回收站、将短链接从回收站中恢复、将回收站中的短链接删除。" />
+    <option name="LAST_COMMIT_MESSAGE" value="完成将短链接移至回收站、将短链接从回收站中恢复、将回收站中的短链接删除。" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -267,6 +333,11 @@
         </breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="java.util.concurrent.atomic.AtomicBoolean" memberName="value" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
